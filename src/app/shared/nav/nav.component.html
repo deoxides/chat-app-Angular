@@ -1,0 +1,61 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light"
+[ngClass]="{'bg-nav-scroll': scrolled,'bg-nav' : active }">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">
+      <img src="/assets/images/Logo.png" alt="" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbar"
+      aria-controls="navbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="onActivate()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav ms-auto me-auto my-2 my-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/services" routerLinkActive="active"
+            >Services</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/reviews" routerLinkActive="active"
+            >Reviews</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/contact" routerLinkActive="active"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <hr class="d-lg-none">
+      <ng-container *ngIf="showLogoutButton; else elseTemplate">
+        <div class="navbar-nav">
+          <button class="btn btn-danger"
+          (click)="logout()">
+            Log out
+        </button>
+        </div>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="navbar-nav ">
+          <a class="btn text-white me-2"
+          routerLink="/auth/login">
+            Log In
+          </a>
+          <a class="btn btn-outline-light me-2"
+          routerLink="/auth/signin">Sign In</a>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</nav>

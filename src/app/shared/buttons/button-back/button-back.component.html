@@ -1,0 +1,8 @@
+<button class="btn"
+[ngClass]="{
+    'btn-light btn-bg-light text-primary': theme === 'light',
+    'btn-dark btn-bg-dark text-secondary': theme ==='dark'
+}"
+(click)="goBack()">
+    {{text}}
+</button>

@@ -1,0 +1,53 @@
+.content{
+    display: flex;
+    flex-direction: column;
+}
+@mixin content($color) {
+  align-items: center;
+  background-color: $color;
+  border-radius: 50px;
+  display: inline-block;
+  height: auto;
+  min-width: 200px;
+  width: auto;
+  max-width: 80%;
+  overflow: hidden;
+}
+.message {
+    align-items: center;
+  display: flex;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  img {
+    height: 80px;
+    border-radius: 50px;
+  }
+}
+.message-sended {
+  @extend .message;
+  margin-left: auto;
+  flex-direction: row-reverse;
+  .message-content {
+    @include content(#d9fdd3);
+  }
+  .time {
+    margin: auto auto auto 0;
+  }
+}
+.message-recived {
+  @extend .message;
+  margin-right: auto;
+  flex-direction: row;
+  .message-content {
+    @include content(#ffffff);
+  }
+  .time {
+    margin: auto auto 0 auto;
+  }
+}
+
+.message-text{
+    margin:20px;
+    word-wrap: break-word;
+}

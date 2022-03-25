@@ -1,0 +1,12 @@
+$bg-nav: "#6f42c1";
+
+.content-bg{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba($color:#9F45B0 , $alpha: 0.4);
+  border-radius: 10px;
+  margin: -10px;
+  z-index: -2;
+}

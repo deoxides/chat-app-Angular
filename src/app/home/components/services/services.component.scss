@@ -1,0 +1,44 @@
+
+*{
+    margin: 0px;
+}
+
+:host{
+    width: 100%;
+  }
+  
+#services{
+    align-items: center;
+    justify-content: space-between;
+}
+.header{
+    margin-left: 10px;
+}
+.card-body{
+    position: relative;
+}
+
+.icon-services{
+    display: grid;
+    grid-template-columns: 225px 225px;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    img{
+        align-self: center;
+        background-color: #ffff;
+        border-radius: 10px;
+        height: auto;
+        width: 100%;
+    }
+}
+
+.overflow-text{
+    mix-blend-mode: difference;
+}
+
+@media screen and (max-width:767px) {
+    .icon-services{
+        grid-template-columns: auto;
+    }
+    
+}

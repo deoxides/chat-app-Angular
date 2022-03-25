@@ -1,0 +1,39 @@
+$bg-height:70vh;
+#main{
+    display: flex;
+    align-items: center;
+    height:$bg-height;
+    position: relative;
+    &::before{
+        content: "";
+        width: 100%;
+        min-height: 100vh;
+        top:0px;
+        position: absolute;
+        background-image: url('/assets/backgrounds/bg-main.png');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        overflow: visible;
+        z-index: -1;
+    }
+}
+
+#tools{
+    display: flex;
+    align-items: center;
+    height:$bg-height;
+    position: relative;
+    &::before{
+        content: "";
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        background-image: url('/assets/backgrounds/bg-secondary.png');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        overflow: visible;
+        z-index: -1;
+    }
+}

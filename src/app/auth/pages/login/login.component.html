@@ -1,0 +1,44 @@
+<app-button-back text="go back"></app-button-back>
+<main id="auth">
+  <div class="row">
+    <div class="col-sm-12 col-md-5">
+      <div class="div-glass">
+        <form (ngSubmit)="login()">
+          <h2 class="text-glass-0">Log In</h2>
+          <div class="form-group">
+            <label>Email</label>
+            <input
+              class="form-control"
+              name="email"
+              placeholder="user@example.com"
+              [(ngModel)]="email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              [(ngModel)]="password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <p class="text-glass-0">
+              Dont have an account?<a routerLink="/auth/signin">register</a>
+            </p>
+          </div>
+          <button class="btn btn-primary ms-auto" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="ocean">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+</main>
+  <swal #swal></swal>
+

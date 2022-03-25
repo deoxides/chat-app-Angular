@@ -1,0 +1,26 @@
+@mixin card-image {
+    position: absolute;
+    max-width: 100px;
+    bottom: 10px;
+    transition: 3s ease;
+}
+:host{
+    width: 100%;
+}
+.tool-card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    &:hover{
+        .card-img{
+            transform: scale(1.5);
+        }
+    }
+    .card{
+        min-width: 100px;
+    }
+}
+
+.card-img{
+    @include card-image;
+}
