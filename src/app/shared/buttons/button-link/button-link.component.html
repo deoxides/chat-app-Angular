@@ -1,9 +1,6 @@
-<a class="btn"
-[ngClass]="{
-    'btn-light btn-bg-light text-primary': theme === 'light',
-    'btn-dark btn-bg-dark text-secondary': theme ==='dark'
-}"
+<button mat-flat-button
+color="accent"
 [routerLink]='path'>
     {{text}}
-    <img src="/assets/icons/go-icon.png" height="50px">
-</a>
+    <mat-icon>arrow_circle_right</mat-icon>
+</button>

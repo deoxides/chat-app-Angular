@@ -1,11 +1,10 @@
-import { User as FireUser } from "firebase/auth";
+import { User } from '@angular/fire/auth';
 
 export interface Message{
-    body:string
-}
-
-export interface User extends FireUser{
-    username:string
+    from:User;
+    body:string;
+    to?:User;
+    createdAt:Date;
 }
 
 export interface Room{
@@ -17,4 +16,10 @@ export interface Room{
 export interface RoomResponse{
     msg?:string;
     data:Room
+}
+
+export interface UserSmall{
+    email:string;
+    username:string;
+    photoUrl?:string;
 }

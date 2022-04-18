@@ -1,11 +1,19 @@
 @use './scss/config.scss';
 
 
+:root{
+  --c-primary:#F8BBD0
+}
+
 html,body{
   margin: 0px;
   padding: 0px;
   border-radius: 0%;
   color:var(--bs-light);
+}
+
+li{
+  list-style: none;
 }
 
 .btn{
@@ -25,3 +33,5 @@ html,body{
   margin: 0px;
   padding: 0px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

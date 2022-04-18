@@ -13,25 +13,19 @@ export class NavComponent{
   showLogoutButton:boolean = false;
 
   constructor(private auth:AuthService){
-    const user = this.auth.user.subscribe((user) => {
-      if(user){
-        this.showLogoutButton = true;
-      }else{
-        this.showLogoutButton = false;
-      }
-    });
+    this.auth.isLoggedIn().subscribe((state) => (state)? this.showLogoutButton = true : this.showLogoutButton = false)
   }
 
   @HostListener("window:scroll")
   onScroll(){
-      this.scrolled = window.scrollY > 0;
+    this.scrolled = window.scrollY > 0;
   }
   onActivate(){
     this.active = (!this.active) ?  true : false ;
   }
 
   logout(){
-this.showLogoutButton = false;
+    this.showLogoutButton = false;
     this.auth.logout();
   }
 }

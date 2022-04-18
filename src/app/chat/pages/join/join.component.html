@@ -1,0 +1,26 @@
+<main>
+  <div class="card">
+    <h1 class="card-title">Join to Rooms</h1>
+    <div class="card-body">
+      <form #searchForm="ngForm" (ngSubmit)="searchRoom()">
+        <div class="form-group">
+          <input
+            [(ngModel)]="roomName"
+            class="form-control"
+            [ngClass]="{'is-invalid':roomName.length < 1}"
+            name="roomName"
+            type="text"
+            placeholder="Name room"
+          />
+          <button
+            mat-flat-button
+            color="accent"
+            class="form-control mt-1"
+            type="submit"
+          >Search Room</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+<swal #swal></swal>

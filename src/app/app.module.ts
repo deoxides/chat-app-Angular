@@ -1,17 +1,13 @@
-//Angular Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//Custom Modules
+
 import { FirebaseModule } from './firebase/firebase.module';
+import { MaterialModule } from './material/material.module';
 import { SocketModule } from './socket/socket.module';
-//Routes
 import { AppRoutingModule } from './app-routing.module';
-//Components
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
-import { HomeModule } from './home/home.module';
-import { ChatModule } from './chat/chat.module';
 import { SocketService } from './socket/socket.service';
 
 @NgModule({
@@ -19,20 +15,15 @@ import { SocketService } from './socket/socket.service';
     AppComponent,
   ],
   imports: [
-    //Angular Modules
     BrowserModule,
     BrowserAnimationsModule,
-    //Services Modules
     FirebaseModule,
+    MaterialModule,
     SocketModule,
-    //Routes Modules
     AppRoutingModule,
-    //App Modules
-    AuthModule,
-    HomeModule,
-    ChatModule
+    AuthModule
   ],
   providers: [SocketService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { };

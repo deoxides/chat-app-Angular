@@ -1,4 +1,3 @@
-
 *{
     margin: 0px;
 }
@@ -20,7 +19,7 @@
 
 .icon-services{
     display: grid;
-    grid-template-columns: 225px 225px;
+    grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     gap: 5px;
     img{
@@ -29,16 +28,11 @@
         border-radius: 10px;
         height: auto;
         width: 100%;
+        object-fit: cover;
     }
 }
 
 .overflow-text{
+    color: #ffff;
     mix-blend-mode: difference;
-}
-
-@media screen and (max-width:767px) {
-    .icon-services{
-        grid-template-columns: auto;
-    }
-    
 }

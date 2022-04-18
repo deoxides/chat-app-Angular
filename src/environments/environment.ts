@@ -13,8 +13,8 @@ export const environment = {
     authDomain: 'chat-app-19d4a.firebaseapp.com',
     messagingSenderId: '616724493012',
   },
-  socket:{
-    url:'http://localhost:8080/'
+  server:{
+    url:'http://localhost:8080',
   }
 };
 

@@ -1,6 +1,52 @@
-<main>
-    <app-sidebar></app-sidebar>
-    <div class="chat">
-
-    </div>
-</main>
+<mat-drawer-container>
+    <mat-drawer mode="side" opened>
+      <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="chat-container">
+          <div
+           *ngIf="!(room?.messages); else content"
+          class="d-flex justify-content-center align-items-center h-100"
+            >
+            <mat-progress-spinner
+              class="example-margin"
+              color="primary"
+              mode="indeterminate"
+            >
+            </mat-progress-spinner>
+          </div>
+        <ng-template #content>
+          <ul #messages class="chat-list" id="messages">
+            <li *ngFor="let message of (room?.messages)">
+              <app-message [message]="message"></app-message>
+            </li>
+          </ul>
+          <hr />
+          <div id="input" class="card-body">
+            <form #messageForm="ngForm" (ngSubmit)="sendMessage()">
+              <div class="row">
+                <div class="col-10">
+                  <input
+                    [(ngModel)]="message"
+                    name="message"
+                    type="text"
+                    class="form-control b-0"
+                    placeholder="Escribe tu mensaje aquí"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="col-2">
+                  <button type="submit" mat-fab color="accent">
+                    <mat-icon aria-hidden="false" aria-label="send icon"
+                      >send</mat-icon
+                    >
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </ng-template>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+<swal #swal></swal>

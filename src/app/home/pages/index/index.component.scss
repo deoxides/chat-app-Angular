@@ -4,6 +4,7 @@ $bg-height:70vh;
     align-items: center;
     height:$bg-height;
     position: relative;
+    width: 100%;
     &::before{
         content: "";
         width: 100%;

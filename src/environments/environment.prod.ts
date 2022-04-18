@@ -9,7 +9,7 @@ export const environment = {
     authDomain: 'chat-app-19d4a.firebaseapp.com',
     messagingSenderId: '616724493012',
   },
-  socket:{
+  server:{
     url:'https://deoxides-chat-app.herokuapp.com'
   }
 };

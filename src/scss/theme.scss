@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$lg-primary: mat.define-palette(mat.$gray-palette, 50);
+$lg-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$lg-warn: mat.define-palette(mat.$red-palette);
+
+$lg-theme: mat.define-light-theme((
+ color: (
+   primary: $lg-primary,
+   accent: $lg-accent,
+   warn:$lg-warn
+ )
+));
+$dk-primary: mat.define-palette(mat.$gray-palette, 800);
+$dk-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
+$dk-warn: mat.define-palette(mat.$red-palette);
+
+$dk-theme: mat.define-light-theme((
+ color: (
+   primary: $dk-primary,
+   accent: $dk-accent,
+   warn:$dk-warn
+ ),
+));
+
+@include mat.core-theme($lg-theme);
+@include mat.button-theme($lg-theme);
+
+.dk-theme {
+  @include mat.core-color($dk-theme);
+  @include mat.button-color($dk-theme);
+ }

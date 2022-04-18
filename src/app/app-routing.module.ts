@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//routes
-import { AuthRoutingModule } from './auth/auth-routing.module';
-import { ChatRoutingModule } from './chat/chat-routing.module';
-import { HomeRoutingRoutingModule } from './home/home-routing-routing.module';
+
+import { AuthGuard } from './auth/guards/auth.guard';
+import { ChatGuard } from './chat/guards/chat.guard';
 
 const routes: Routes = [
   {
     path:'',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
   },
   {
     path:'auth',
-    loadChildren:() => import('./auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule),
+    canActivate:[AuthGuard],
+    canLoad:[AuthGuard]
   },
   {
     path:'rooms',
-    loadChildren:() => import('./chat/chat.module').then(m => m.ChatModule)
+    loadChildren:() => import('./chat/chat.module').then(m => m.ChatModule),
+    canLoad:[ChatGuard]
   },
   {
     path:'**',

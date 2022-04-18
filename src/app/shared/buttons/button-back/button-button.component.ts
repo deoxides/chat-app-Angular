@@ -12,7 +12,6 @@ export class ButtonBackComponent{
   constructor(private location:Location) { }
 
   goBack(){
-    console.log('back')
     this.location.back();
   }
 }

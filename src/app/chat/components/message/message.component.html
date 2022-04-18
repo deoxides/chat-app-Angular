@@ -1,12 +1,16 @@
-<small>{{from}}</small>
-<li class="message message-sended">
-  <img src="assets/users/1.jpg" alt="user-img" class="img-circle" />
-  <div class="message-content">
-    <span class="content">
-      <p class="message-text">{{ message }}</p>
-    </span>
+<ng-template ngIf="user | async">
+  <div [ngClass]="{'message-sended' : message.from.uid == ( user | async)?.uid, 'message-recived': message.from.uid != ( user | async)?.uid}">
+      <small class="message-sender">{{message.from.displayName}}</small>
+      <img [src]="message.from | img"  alt="user-img" class="img-circle" referrerpolicy="no-referrer" />
+      <div class="message-content">
+        <span class="content">
+          <p class="message-text">{{ message.body }}</p>
+        </span>
+      </div>
+      <span class="time">
+        <small class="message-time">{{ message.createdAt | date:'shortTime' }} </small>
+      </span>
   </div>
-  <span class="time">
-    <small class="message-time">{{ time }} </small>
-  </span>
-</li>
+</ng-template>
+
+

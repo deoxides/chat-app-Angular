@@ -1,10 +1,11 @@
+
 .content{
     display: flex;
     flex-direction: column;
 }
-@mixin content($color) {
+@mixin content($bg) {
   align-items: center;
-  background-color: $color;
+  background-color: $bg;
   border-radius: 50px;
   display: inline-block;
   height: auto;
@@ -14,12 +15,18 @@
   overflow: hidden;
 }
 .message {
-    align-items: center;
+  align-items: center;
   display: flex;
   padding: 20px;
   position: relative;
   width: 100%;
+  .message-sender{
+    position: absolute;
+    top: 0px;
+    margin: 0px;
+  }
   img {
+    margin: 10px;
     height: 80px;
     border-radius: 50px;
   }
@@ -29,10 +36,13 @@
   margin-left: auto;
   flex-direction: row-reverse;
   .message-content {
-    @include content(#d9fdd3);
+    @include content(#FFE4F2);
+    .message-text{
+      color: rgb(0, 0, 0);
+    }
   }
   .time {
-    margin: auto auto auto 0;
+    margin: 0px auto 0px 0px;
   }
 }
 .message-recived {
@@ -40,10 +50,13 @@
   margin-right: auto;
   flex-direction: row;
   .message-content {
-    @include content(#ffffff);
+    @include content(#9F45B0);
+    .message-text{
+      color: #ffff;
+    }
   }
   .time {
-    margin: auto auto 0 auto;
+    margin: 0 0 0 auto;
   }
 }
 
